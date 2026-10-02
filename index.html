@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehnaz Printers</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Mehnaz Printers
+        </div>
+
+        <button class="add-btn" onclick="openModal()">
+            + Add Customer
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-box">
+                <p>Pending Orders</p>
+                <h2 id="pendingCount">0</h2>
+            </div>
+
+            <div class="stat-box">
+                <p>Received Orders</p>
+                <h2 id="receicedCount">0</h2>
+            </div>
+
+            <div class="stat-box">
+                <p>Total Received Amount</p>
+                <h2 id="receicedAmount">Rs. 0</h2>
+            </div>
+
+            <div class="stat-box">
+                <p>Total Balance Amount</p>
+                <h2 id="pendingAmount">Rs. 0</h2>
+            </div>
+
+        </div>
+
+
+        <!-- PENDING ORDERS -->
+
+        <div class="section">
+
+            <div class="section-header">
+                <h2>Pending Orders</h2>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Customer</th>
+                            <th>Service</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Advance</th>
+                            <th>Balance</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="pendingTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECEIVED ORDERS -->
+
+        <div class="section">
+
+            <div class="section-header">
+                <h2>Received Orders</h2>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Customer</th>
+                            <th>Service</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Paid</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="receivedTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ADD CUSTOMER MODAL -->
+
+    <div class="modal-overlay" id="modal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h2>Add Customer</h2>
+
+                <button class="close-btn" onclick="closeModal()">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <form id="orderForm">
+
+                <div class="form-group">
+
+                    <label>Customer Name</label>
+
+                    <input type="text" id="customerName" placeholder="Enter customer name" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Service</label>
+
+                    <select id="service" required>
+
+                        <option value="">
+                            Select Service
+                        </option>
+
+                        <option value="Visiting Cards">
+                            Visiting Cards
+                        </option>
+
+                        <option value="Wedding Cards">
+                            Wedding Cards
+                        </option>
+
+                        <option value="Poster">
+                            Poster
+                        </option>
+
+                        <option value="Banner">
+                            Banner
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Quantity</label>
+
+                        <input type="number" id="quantity" placeholder="Quantity" min="1" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Price Per Item</label>
+
+                        <input type="number" id="price" placeholder="Price" min="0" required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Advance Payment</label>
+
+                    <input type="number" id="advanceInput" placeholder="Advance amount" min="0" required>
+
+                </div>
+
+
+                <button class="submit-btn" type="submit">
+                    Add Customer
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
